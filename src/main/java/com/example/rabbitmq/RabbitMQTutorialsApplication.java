@@ -2,6 +2,7 @@ package com.example.rabbitmq;
 
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
@@ -22,10 +23,10 @@ public class RabbitMQTutorialsApplication extends SpringBootServletInitializer{
     public static void main(String[] args) throws Exception {
         SpringApplication.run(RabbitMQTutorialsApplication.class, args);
     }
-
-    
+    @Autowired
+    RabbitConfigProperties configProperties;
     @RequestMapping("/")
     ModelAndView rabbit(){
-    	return new ModelAndView("redirect:http://localhost:15672/");
+    	return new ModelAndView("redirect:http://"+configProperties.getHost()+":"+configProperties.getManagementpluginport());
     }
 }
