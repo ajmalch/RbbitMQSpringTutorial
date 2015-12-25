@@ -7,8 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.handler.annotation.SendTo;
 
 /**
- * @author Gary Russell
- * @author Scott Deeg
+ * @author Ajmal Cholassery
  */
 @Configuration
 public class RPCServer {

@@ -8,10 +8,10 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author Gary Russell
- * @author Scott Deeg
+ * @author Ajmal Cholassery
  *
  */
 @SpringBootApplication
@@ -23,8 +23,9 @@ public class RabbitMQTutorialsApplication extends SpringBootServletInitializer{
         SpringApplication.run(RabbitMQTutorialsApplication.class, args);
     }
 
+    
     @RequestMapping("/")
-    String hello() {
-        return "Hello, Spring Boot !";
+    ModelAndView rabbit(){
+    	return new ModelAndView("redirect:http://localhost:15672/");
     }
 }

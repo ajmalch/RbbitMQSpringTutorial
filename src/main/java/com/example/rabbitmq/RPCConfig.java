@@ -11,8 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 /**
- * @author Gary Russell
- * @author Scott Deeg
+ * @author Ajmal Cholassery
  *
  */
 @Profile({"tut6","rpc"})
