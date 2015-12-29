@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Profile;
  * @author Ajmal Cholassery
  *
  */
-@Profile({"tut6","rpc"})
+@Profile({"rpc"})
 @Configuration
 @EnableRabbit
 public class RPCConfig {
@@ -24,16 +24,16 @@ public class RPCConfig {
 
 		@Bean
 		public Queue requestQueue() {
-			return new Queue("tut.rpc.requests",true);
+			return new Queue("rpc.requests",true);
 		}
 		@Bean
 		public Queue responseQueue() {
-			return new Queue("tut.rpc.replies",true);
+			return new Queue("rpc.replies",true);
 		}
 
 		@Bean
 		public DirectExchange exchange() {
-			return new DirectExchange("tut.rpc");
+			return new DirectExchange("rpc");
 		}
 
 		@Bean

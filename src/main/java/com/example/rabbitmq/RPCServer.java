@@ -14,8 +14,8 @@ public class RPCServer {
 
 	
 	
-	@RabbitListener(queues = "tut.rpc.requests")
-	@SendTo("tut.rpc.replies") 
+	@RabbitListener(queues = "rpc.requests")
+	@SendTo("rpc.replies") 
 	public String fibonacci(Message name) {
 		System.out.println(" [x] Received request for " + name);
 		//int result = fib(n);
